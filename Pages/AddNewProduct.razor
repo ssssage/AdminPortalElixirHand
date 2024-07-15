@@ -1,0 +1,61 @@
+﻿@page "/add-new-product"
+@inherits AddNewProductBase
+
+<h3>Add New Product</h3>
+
+<EditForm Model="@NewProduct" OnValidSubmit="HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="form-group">
+        <label for="name">Name</label>
+        <InputText id="name" class="form-control" @bind-Value="NewProduct.Name" />
+    </div>
+
+    <div class="form-group">
+        <label for="description">Description</label>
+        <InputTextArea id="description" class="form-control" @bind-Value="NewProduct.Description" />
+    </div>
+
+    <div class="form-group">
+        <label for="price">Price</label>
+        <InputNumber id="price" class="form-control" @bind-Value="NewProduct.Price" />
+    </div>
+
+    <div class="form-group">
+        <label for="type">Type</label>
+        <InputSelect id="type" class="form-control" @bind-Value="NewProduct.ProductTypeId">
+            @foreach (var type in Types)
+            {
+                <option value="@type.Id">@type.Name</option>
+            }
+        </InputSelect>
+    </div>
+
+    <div class="form-group">
+        <label for="brand">Brand</label>
+        <InputSelect id="brand" class="form-control" @bind-Value="NewProduct.ProductBrandId">
+            @foreach (var brand in Brands)
+            {
+                <option value="@brand.Id">@brand.Name</option>
+            }
+        </InputSelect>
+    </div>
+
+    @* <div class="form-group">
+        <label for="image">Image</label>
+        <InputFile id="image" OnChange="HandleImageUpload" />
+    </div> *@
+    <div class="form-group">
+        <label for="url">URL</label>
+        <InputText id="url" class="form-control" @bind-Value="NewProduct.PictureUrl" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+    <button type="button" class="btn btn-secondary" @onclick="Cancel">Cancel</button>
+</EditForm>
+
+@if (!string.IsNullOrEmpty(Message))
+{
+    <div class="alert alert-success">@Message</div>
+}

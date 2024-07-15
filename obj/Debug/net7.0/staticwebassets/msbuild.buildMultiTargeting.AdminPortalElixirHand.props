@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\AdminPortalElixirHand.props" />
+</Project>
