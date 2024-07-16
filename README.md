@@ -5,6 +5,8 @@ AdminPortalElixirHand is an open-source Blazor .NET-based project aimed at provi
 For Additional Resources feel free to: 
 - Visit [Kali Linux Code](https://kalilinuxcode.com/) For more information, tutorials, and code samples.
 
+![Alt text](/images/to/Full Featured CRUD App based on Blazor .NET 8.png)
+
 ## Features
 
 - **Product Management**: Add, edit, delete, and view products.

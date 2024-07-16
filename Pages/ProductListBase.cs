@@ -81,5 +81,18 @@ namespace AdminPortalElixirHand.Pages
             CurrentPage = 1;
             await LoadProducts();
         }
+
+        protected async Task DeleteProduct(int productId)
+        {
+            var isDeleted = await ProductService.DeleteProductAsync(productId);
+            if (isDeleted)
+            {
+                await LoadProducts(); // Reload the products to reflect the deletion
+            }
+            else
+            {
+                // Handle the error (e.g., show a message to the user)
+            }
+        }
     }
 }

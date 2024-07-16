@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AdminPortalElixirHand")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+02b39c43cf4360fc6cf2c1868056b03ffb5852c1")]
 [assembly: System.Reflection.AssemblyProductAttribute("AdminPortalElixirHand")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AdminPortalElixirHand")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

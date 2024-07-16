@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "uYj06CA+ku2Bpz94nKDjPlAE1nOxZDPp9eqPz2pYkiQ=",
+  "Hash": "NkJTTvYtfg8ndgvCdgv/QtFnmzSUYNEx9eIllZY4fB4=",
   "Source": "AdminPortalElixirHand",
   "BasePath": "_content/AdminPortalElixirHand",
   "Mode": "Default",
@@ -12,10 +12,10 @@
       "Source": "API",
       "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
       "AdditionalPublishProperties": "",
-      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;Configuration;Platform;TargetFramework",
       "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
       "AdditionalBuildProperties": "",
-      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework"
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;Configuration;Platform;TargetFramework"
     }
   ],
   "DiscoveryPatterns": [
@@ -150,25 +150,6 @@
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\elixi\\Desktop\\Code\\eCommerce-Services\\AdminPortalElixirHand\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
-      "SourceId": "AdminPortalElixirHand",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\elixi\\Desktop\\Code\\eCommerce-Services\\AdminPortalElixirHand\\wwwroot\\",
-      "BasePath": "_content/AdminPortalElixirHand",
-      "RelativePath": "css/open-iconic/FONT-LICENSE",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\open-iconic\\FONT-LICENSE"
-    },
-    {
       "Identity": "C:\\Users\\elixi\\Desktop\\Code\\eCommerce-Services\\AdminPortalElixirHand\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
       "SourceId": "AdminPortalElixirHand",
       "SourceType": "Discovered",
@@ -281,6 +262,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff"
+    },
+    {
+      "Identity": "C:\\Users\\elixi\\Desktop\\Code\\eCommerce-Services\\AdminPortalElixirHand\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
+      "SourceId": "AdminPortalElixirHand",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\elixi\\Desktop\\Code\\eCommerce-Services\\AdminPortalElixirHand\\wwwroot\\",
+      "BasePath": "_content/AdminPortalElixirHand",
+      "RelativePath": "css/open-iconic/FONT-LICENSE",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\open-iconic\\FONT-LICENSE"
     },
     {
       "Identity": "C:\\Users\\elixi\\Desktop\\Code\\eCommerce-Services\\AdminPortalElixirHand\\wwwroot\\css\\open-iconic\\ICON-LICENSE",

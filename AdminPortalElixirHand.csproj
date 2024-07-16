@@ -6,9 +6,17 @@
     <ImplicitUsings>enable</ImplicitUsings>
      <NoWarn>$(NoWarn);CS0028;CS0618</NoWarn>
   </PropertyGroup>
-  
-  
-  
+
+
+  <ItemGroup>
+    <Content Update="not_appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="not_appsettings.Development.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
   <ItemGroup>
     <Compile Remove="Pages\ProductLists\**" />
     <Content Remove="Pages\ProductLists\**" />
@@ -36,7 +44,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\API\API.csproj" />
+    <ProjectReference Include="..\..\eCommerce-Services\Core\Core.csproj" />
+    <ProjectReference Include="..\..\eCommerce-Services\Infrastructure\Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="API">
+      <HintPath>..\..\eCommerce-Services\API\bin\Debug\net6.0\API.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

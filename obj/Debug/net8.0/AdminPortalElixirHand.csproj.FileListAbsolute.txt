@@ -309,3 +309,16 @@ C:\Users\elixi\Desktop\Code\eCommerce-Services\AdminPortalElixirHand\bin\Debug\n
 C:\Users\elixi\Desktop\Code\eCommerce-Services\AdminPortalElixirHand\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\elixi\Desktop\Code\eCommerce-Services\AdminPortalElixirHand\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
 C:\Users\elixi\Desktop\Code\eCommerce-Services\AdminPortalElixirHand\bin\Debug\net8.0\Microsoft.JSInterop.dll
+C:\Users\elixi\Desktop\Code\eCommerce-Services\AdminPortalElixirHand\obj\Debug\net8.0\AdminPortalElixirHand.sourcelink.json
+C:\Users\elixi\Desktop\Code\eCommerce-Services\AdminPortalElixirHand\bin\Debug\net8.0\not_appsettings.Development.json
+C:\Users\elixi\Desktop\Code\eCommerce-Services\AdminPortalElixirHand\bin\Debug\net8.0\not_appsettings.json
+C:\Users\elixi\Desktop\Code\Admin\AdminPortalElixirHand\obj\Debug\net8.0\AdminPortalElixirHand.csproj.AssemblyReference.cache
+C:\Users\elixi\Desktop\Code\Admin\AdminPortalElixirHand\obj\Debug\net8.0\AdminPortalElixirHand.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\elixi\Desktop\Code\Admin\AdminPortalElixirHand\obj\Debug\net8.0\AdminPortalElixirHand.AssemblyInfoInputs.cache
+C:\Users\elixi\Desktop\Code\Admin\AdminPortalElixirHand\obj\Debug\net8.0\AdminPortalElixirHand.AssemblyInfo.cs
+C:\Users\elixi\Desktop\Code\Admin\AdminPortalElixirHand\obj\Debug\net8.0\AdminPortalElixirHand.csproj.CoreCompileInputs.cache
+C:\Users\elixi\Desktop\Code\Admin\AdminPortalElixirHand\obj\Debug\net8.0\AdminPortalElixirHand.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\elixi\Desktop\Code\Admin\AdminPortalElixirHand\obj\Debug\net8.0\AdminPortalElixirHand.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\elixi\Desktop\Code\Admin\AdminPortalElixirHand\obj\Debug\net8.0\AdminPortalElixirHand.RazorAssemblyInfo.cache
+C:\Users\elixi\Desktop\Code\Admin\AdminPortalElixirHand\obj\Debug\net8.0\AdminPortalElixirHand.RazorAssemblyInfo.cs
+C:\Users\elixi\Desktop\Code\Admin\AdminPortalElixirHand\obj\Debug\net8.0\AdminPortalElixirHand.sourcelink.json
