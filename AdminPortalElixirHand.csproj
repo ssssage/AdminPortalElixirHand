@@ -6,9 +6,17 @@
     <ImplicitUsings>enable</ImplicitUsings>
      <NoWarn>$(NoWarn);CS0028;CS0618</NoWarn>
   </PropertyGroup>
-  
-  
-  
+
+
+  <ItemGroup>
+    <Content Update="not_appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="not_appsettings.Development.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
   <ItemGroup>
     <Compile Remove="Pages\ProductLists\**" />
     <Content Remove="Pages\ProductLists\**" />

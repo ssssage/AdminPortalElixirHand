@@ -13,6 +13,7 @@ public class Program
             .ConfigureWebHostDefaults(webBuilder =>
             {
                 webBuilder.UseStartup<Startup>();
+                webBuilder.UseUrls("http://localhost:5001", "https://localhost:7215");
             });
 
 }
