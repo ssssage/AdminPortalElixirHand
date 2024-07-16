@@ -1,6 +1,10 @@
 {
   "Version": 1,
+<<<<<<< HEAD
   "Hash": "UprZqrwOuexrjwpca4Vp6Ba80Hv1gcFrwWuwPSOzYUk=",
+=======
+  "Hash": "NkJTTvYtfg8ndgvCdgv/QtFnmzSUYNEx9eIllZY4fB4=",
+>>>>>>> b374e965ecb4100a49d7e407e0810d5f2146eda9
   "Source": "AdminPortalElixirHand",
   "BasePath": "_content/AdminPortalElixirHand",
   "Mode": "Default",
@@ -11,11 +15,19 @@
       "Version": 2,
       "Source": "API",
       "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+<<<<<<< HEAD
       "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
       "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework",
       "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
       "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
       "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework"
+=======
+      "AdditionalPublishProperties": "",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;Configuration;Platform;TargetFramework",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;Configuration;Platform;TargetFramework"
+>>>>>>> b374e965ecb4100a49d7e407e0810d5f2146eda9
     }
   ],
   "DiscoveryPatterns": [
