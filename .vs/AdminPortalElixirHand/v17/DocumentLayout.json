@@ -1,5 +1,6 @@
 {
   "Version": 1,
+<<<<<<< HEAD
   "WorkspaceRootPath": "C:\\Users\\elixi\\Desktop\\Code\\Admin\\AdminPortalElixirHand\\",
   "Documents": [
     {
@@ -11,6 +12,10 @@
       "RelativeMoniker": "D:0:0:{56EDBB87-1E84-494E-B703-1C49C3944054}|AdminPortalElixirHand.csproj|solutionrelative:pages\\addnewproductbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
+=======
+  "WorkspaceRootPath": "C:\\Users\\elixi\\Desktop\\Code\\eCommerce-Services\\AdminPortalElixirHand\\",
+  "Documents": [],
+>>>>>>> ce6e5e8023f833f8f304b8ec601a9a9db3598dd9
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -18,7 +23,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 186,
+<<<<<<< HEAD
           "SelectedChildIndex": 4,
+=======
+          "SelectedChildIndex": -1,
+>>>>>>> ce6e5e8023f833f8f304b8ec601a9a9db3598dd9
           "Children": [
             {
               "$type": "Bookmark",
@@ -35,6 +44,7 @@
             {
               "$type": "Bookmark",
               "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+<<<<<<< HEAD
             },
             {
               "$type": "Document",
@@ -61,6 +71,8 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-16T18:40:51.486Z",
               "EditorCaption": ""
+=======
+>>>>>>> ce6e5e8023f833f8f304b8ec601a9a9db3598dd9
             }
           ]
         }
