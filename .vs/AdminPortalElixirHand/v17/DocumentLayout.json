@@ -1,29 +1,7 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\elixi\\Desktop\\Code\\Admin\\AdminPortalElixirHand\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{56EDBB87-1E84-494E-B703-1C49C3944054}|AdminPortalElixirHand.csproj|c:\\users\\elixi\\desktop\\code\\admin\\adminportalelixirhand\\pages\\productlists\\productlistupsert.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{56EDBB87-1E84-494E-B703-1C49C3944054}|AdminPortalElixirHand.csproj|solutionrelative:pages\\productlists\\productlistupsert.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{56EDBB87-1E84-494E-B703-1C49C3944054}|AdminPortalElixirHand.csproj|c:\\users\\elixi\\desktop\\code\\admin\\adminportalelixirhand\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{56EDBB87-1E84-494E-B703-1C49C3944054}|AdminPortalElixirHand.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{22BCEAF5-754F-4C84-9871-C4553BFA17CF}|..\\Core\\Core.csproj|c:\\users\\elixi\\desktop\\code\\admin\\core\\dtos\\productcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{22BCEAF5-754F-4C84-9871-C4553BFA17CF}|..\\Core\\Core.csproj|c:\\users\\elixi\\desktop\\code\\admin\\core\\dtos\\producttoreturndto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7308DDEC-856F-4E14-A526-DE1E3F97A6A0}|..\\DataAccess\\DataAccess.csproj|c:\\users\\elixi\\desktop\\code\\admin\\dataaccess\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{56EDBB87-1E84-494E-B703-1C49C3944054}|AdminPortalElixirHand.csproj|c:\\users\\elixi\\desktop\\code\\admin\\adminportalelixirhand\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56EDBB87-1E84-494E-B703-1C49C3944054}|AdminPortalElixirHand.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "WorkspaceRootPath": "C:\\Users\\elixi\\Desktop\\Code\\eCommerce-Services\\AdminPortalElixirHand\\",
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -31,7 +9,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 186,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -48,79 +26,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\elixi\\Desktop\\Code\\Admin\\AdminPortalElixirHand\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "C:\\Users\\elixi\\Desktop\\Code\\Admin\\AdminPortalElixirHand\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-07-08T02:47:48.442Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ProductToReturnDto.cs",
-              "DocumentMoniker": "C:\\Users\\elixi\\Desktop\\Code\\Admin\\Core\\Dtos\\ProductToReturnDto.cs",
-              "RelativeDocumentMoniker": "..\\Core\\Dtos\\ProductToReturnDto.cs",
-              "ToolTip": "C:\\Users\\elixi\\Desktop\\Code\\Admin\\Core\\Dtos\\ProductToReturnDto.cs",
-              "RelativeToolTip": "..\\Core\\Dtos\\ProductToReturnDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T02:40:38.317Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Product.cs",
-              "DocumentMoniker": "C:\\Users\\elixi\\Desktop\\Code\\Admin\\DataAccess\\Models\\Product.cs",
-              "RelativeDocumentMoniker": "..\\DataAccess\\Models\\Product.cs",
-              "ToolTip": "C:\\Users\\elixi\\Desktop\\Code\\Admin\\DataAccess\\Models\\Product.cs",
-              "RelativeToolTip": "..\\DataAccess\\Models\\Product.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABoAAAAHAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T02:38:46.559Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\elixi\\Desktop\\Code\\Admin\\AdminPortalElixirHand\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\elixi\\Desktop\\Code\\Admin\\AdminPortalElixirHand\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T02:04:40.623Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ProductCreateDto.cs",
-              "DocumentMoniker": "C:\\Users\\elixi\\Desktop\\Code\\Admin\\Core\\Dtos\\ProductCreateDto.cs",
-              "RelativeDocumentMoniker": "..\\Core\\Dtos\\ProductCreateDto.cs",
-              "ToolTip": "C:\\Users\\elixi\\Desktop\\Code\\Admin\\Core\\Dtos\\ProductCreateDto.cs",
-              "RelativeToolTip": "..\\Core\\Dtos\\ProductCreateDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAhAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T01:18:36.681Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ProductListUpsert.razor",
-              "DocumentMoniker": "C:\\Users\\elixi\\Desktop\\Code\\Admin\\AdminPortalElixirHand\\Pages\\ProductLists\\ProductListUpsert.razor",
-              "RelativeDocumentMoniker": "Pages\\ProductLists\\ProductListUpsert.razor",
-              "ToolTip": "C:\\Users\\elixi\\Desktop\\Code\\Admin\\AdminPortalElixirHand\\Pages\\ProductLists\\ProductListUpsert.razor",
-              "RelativeToolTip": "Pages\\ProductLists\\ProductListUpsert.razor",
-              "ViewState": "AQIAAC0AAAAAAAAAAAAAAEoAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-08T01:02:01.521Z",
-              "EditorCaption": ""
             }
           ]
         }
