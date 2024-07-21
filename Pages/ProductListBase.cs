@@ -60,6 +60,7 @@ namespace AdminPortalElixirHand.Pages
             }
         }
 
+
         protected async Task OnPageChanged(int pageIndex)
         {
             if (pageIndex >= 1 && pageIndex <= TotalPages)

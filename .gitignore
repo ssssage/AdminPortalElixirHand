@@ -2,7 +2,6 @@
 bin/
 obj/
 debug/
-*.dll
 
 # Ignore common editor/OS files
 .vscode/

@@ -1,4 +1,5 @@
 ﻿using AdminPortalElixirHand.Services;
+using API.Helpers;
 
 namespace AdminPortalElixirHand
 {
@@ -16,8 +17,9 @@ namespace AdminPortalElixirHand
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            
             // Register AutoMapper
-            services.AddAutoMapper(typeof(Startup));
+            services.AddAutoMapper(typeof(MappingProfiles));
             services.AddRazorPages();
             services.AddServerSideBlazor();
 
@@ -25,7 +27,8 @@ namespace AdminPortalElixirHand
             {
                 client.BaseAddress = new Uri("http://localhost:5000/");
             });
-           
+
+
 
         }
 

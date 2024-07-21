@@ -7,6 +7,16 @@
      <NoWarn>$(NoWarn);CS0028;CS0618</NoWarn>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Pages\AddNewProductBase.cs" />
+    <Compile Remove="Services\CRUDCode.cs" />
+    <Compile Remove="Services\IIntegrationService.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Pages\AddNewProduct.razor" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <Content Update="not_appsettings.json">
@@ -18,20 +28,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="Pages\ProductLists\**" />
-    <Content Remove="Pages\ProductLists\**" />
-    <EmbeddedResource Remove="Pages\ProductLists\**" />
-    <None Remove="Pages\ProductLists\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Flurl.Http" Version="4.0.2" />
     <PackageReference Include="Microsoft.AspNetCore.Components.QuickGrid" Version="8.0.7" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.0">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.29" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="8.0.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="7.0.12" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.0" />
     
@@ -39,19 +42,16 @@
 
   <ItemGroup>
     <Folder Include="Data\" />
+    <Folder Include="ProductsList\" />
     <Folder Include="Pages\Components\" />
+    <Folder Include="Pages\ProductLists\" />
     <Folder Include="Pages\Product\" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\eCommerce-Services\Core\Core.csproj" />
-    <ProjectReference Include="..\..\eCommerce-Services\Infrastructure\Infrastructure.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="API">
-      <HintPath>..\..\eCommerce-Services\API\bin\Debug\net6.0\API.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\API\API.csproj" />
+    <ProjectReference Include="..\Core\Core.csproj" />
+    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
