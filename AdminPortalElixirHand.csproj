@@ -8,6 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Pages\Product\**" />
+    <Content Remove="Pages\Product\**" />
+    <EmbeddedResource Remove="Pages\Product\**" />
+    <None Remove="Pages\Product\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Remove="Pages\AddNewProductBase.cs" />
     <Compile Remove="Services\CRUDCode.cs" />
     <Compile Remove="Services\IIntegrationService.cs" />
@@ -42,10 +49,7 @@
 
   <ItemGroup>
     <Folder Include="Data\" />
-    <Folder Include="ProductsList\" />
     <Folder Include="Pages\Components\" />
-    <Folder Include="Pages\ProductLists\" />
-    <Folder Include="Pages\Product\" />
   </ItemGroup>
 
   <ItemGroup>

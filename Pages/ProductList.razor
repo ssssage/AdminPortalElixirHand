@@ -1,6 +1,7 @@
 ﻿@page "/product-list/"
 @inherits ProductListBase
 
+
 <div class="container">
     <h3>Product List</h3>
 
@@ -8,6 +9,14 @@
         <input type="text" @bind="SearchTerm" placeholder="Search" class="form-control" />
         <button @onclick="SearchProducts" class="btn btn-primary">Search</button>
         <button @onclick="ResetSearch" class="btn btn-secondary">Reset</button>
+    </div>
+    <div class="pagination">
+        <button class="btn btn-secondary" @onclick="() => OnPageChanged(CurrentPage - 1)" disabled="@(CurrentPage == 1)">Previous</button>
+        @for (int i = 1; i <= TotalPages; i++)
+        {
+            <button class="btn @(CurrentPage == i ? "btn-primary" : "btn-secondary")" @onclick="() => OnPageChanged(i)">@i</button>
+        }
+        <button class="btn btn-secondary" @onclick="() => OnPageChanged(CurrentPage + 1)" disabled="@(CurrentPage == TotalPages)">Next</button>
     </div>
 
     <div class="product-list">
@@ -34,7 +43,7 @@
                                         <a href="#" class="btn btn-primary btn-sm">View</a>
                                         <a href="/edit-product/@product.Id" class="btn btn-secondary btn-sm">Edit</a>
 
-                                       <a href="#" @onclick="() => DeleteProduct(product.Id)" class="btn btn-danger btn-sm">Delete</a>
+                                        <a href="#" @onclick="() => DeleteProduct(product.Id)" class="btn btn-danger btn-sm">Delete</a>
                                     </div>
                                 </div>
                             </div>
@@ -42,14 +51,7 @@
                     }
                 </div>
 
-                <div class="pagination">
-                    <button class="btn btn-secondary" @onclick="() => OnPageChanged(CurrentPage - 1)" disabled="@(CurrentPage == 1)">Previous</button>
-                    @for (int i = 1; i <= TotalPages; i++)
-                    {
-                        <button class="btn @(CurrentPage == i ? "btn-primary" : "btn-secondary")" @onclick="() => OnPageChanged(i)">@i</button>
-                    }
-                    <button class="btn btn-secondary" @onclick="() => OnPageChanged(CurrentPage + 1)" disabled="@(CurrentPage == TotalPages)">Next</button>
-                </div>
+               
             }
             else
             {

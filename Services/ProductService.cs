@@ -34,7 +34,7 @@ namespace AdminPortalElixirHand.Services
 
         public async Task<Product> GetProductByIdAsync(int id)
         {
-            var response = await _httpClient.GetFromJsonAsync<Product>($"/api/products/{id}") ?? throw new Exception("Response from API is null");
+            var response = await _httpClient.GetFromJsonAsync<Product>($"/api/products/admin/{id}") ?? throw new Exception("Response from API is null");
             return response;
         }
 

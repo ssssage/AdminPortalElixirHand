@@ -2,10 +2,6 @@
 using API.Dtos;
 using API.Helpers;
 using Microsoft.AspNetCore.Components;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace AdminPortalElixirHand.Pages
 {
@@ -15,6 +11,8 @@ namespace AdminPortalElixirHand.Pages
         public IProductService ProductService { get; set; }
 
         public IEnumerable<ProductToReturnDto> Products { get; set; } = new List<ProductToReturnDto>();
+
+        [Parameter]
         public int CurrentPage { get; set; } = 1;
         public int TotalPages { get; set; }
         public int PageSize { get; set; } = 6;
