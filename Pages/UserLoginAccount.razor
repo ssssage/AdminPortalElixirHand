@@ -1,0 +1,24 @@
+﻿@page "/dologin"
+@inherits UserLoginAccountBase
+
+<h3>Login</h3>
+
+@if (ShowError)
+{
+    <div class="alert alert-danger">Invalid login attempt</div>
+}
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" class="form-control" @bind="LoginModel.Email" />
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" class="form-control" @bind="LoginModel.Password" />
+        </div>
+        <button class="btn btn-primary" @onclick="HandleLogin">Log in</button>
+    </div>
+</div>
+

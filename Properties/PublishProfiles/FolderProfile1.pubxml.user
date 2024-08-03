@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <History>True|2024-07-30T17:35:08.5342562Z||;True|2024-07-30T18:09:36.7747098+01:00||;True|2024-07-30T17:52:04.9936136+01:00||;True|2024-07-30T01:32:01.5631655+01:00||;True|2024-07-30T01:23:37.4933173+01:00||;True|2024-07-30T01:04:25.7512859+01:00||;True|2024-07-30T00:43:39.1055244+01:00||;True|2024-07-29T23:23:33.9759330+01:00||;True|2024-07-29T23:03:05.0076874+01:00||;True|2024-07-29T22:53:41.2126220+01:00||;False|2024-07-29T22:48:12.9333190+01:00||;</History>
+    <LastFailureDetails />
+    <_PublishTargetUrl>C:\Users\elixi\Desktop\Code\Admin\publish</_PublishTargetUrl>
+  </PropertyGroup>
+</Project>

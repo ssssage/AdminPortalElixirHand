@@ -4,6 +4,7 @@ using AutoMapper;
 using Core.Entities;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;
+using Microsoft.Extensions.Options;
 
 namespace AdminPortalElixirHand.Pages
 {
@@ -11,6 +12,9 @@ namespace AdminPortalElixirHand.Pages
     {
         [Inject]
         public IProductService ProductService { get; set; }
+
+        [Inject]
+        public IOptions<AppSettings> AppSettings { get; set; }
 
         public ProductUpdateDto ProductUpdateDto { get; set; } = new ProductUpdateDto();
         public List<ProductType> ProductTypes { get; set; } = new List<ProductType>();
@@ -41,7 +45,7 @@ namespace AdminPortalElixirHand.Pages
 
         private string GetShortenedPictureUrl(string fullUrl)
         {
-            return fullUrl.Replace("http://localhost:5000/", string.Empty);
+            return fullUrl.Replace(AppSettings.Value.BaseUrl, string.Empty);
         }
 
         public string ShortenedPictureUrl
@@ -85,19 +89,28 @@ namespace AdminPortalElixirHand.Pages
 
         private async Task<string> SaveImageAsync(IBrowserFile file)
         {
-            var ext = Path.GetExtension(file.Name);
+            var ext = Path.GetExtension(file.Name).ToLower();
+            if (ext != ".jpg" && ext != ".jpeg" && ext != ".png")
+            {
+                throw new Exception("Invalid image file format. Only .jpg and .png are allowed.");
+            }
+
             var imageName = file.Name;
 
-            // Check if file with same name already exists
-            var path = Path.Combine("C:\\Users\\elixi\\Desktop\\Code\\eCommerce-Services\\API\\Content\\images\\products", imageName);
+            string baseDir = Environment.GetEnvironmentVariable("IMAGE_SAVE_PATH");
+
+            if (string.IsNullOrEmpty(baseDir))
+            {
+                throw new Exception("IMAGE_SAVE_PATH environment variable is not set.");
+            }
+
+            var path = Path.Combine(baseDir, "Content", "images", "products", imageName);
 
             if (File.Exists(path))
             {
-                // If file exists, return the existing file name
                 return imageName;
             }
 
-            // Save the new image
             await using var fs = new FileStream(path, FileMode.Create);
             await file.OpenReadStream().CopyToAsync(fs);
 
@@ -108,15 +121,11 @@ namespace AdminPortalElixirHand.Pages
         {
             selectedImage = e.File;
 
-            // Validate file extension
             var validExtensions = new[] { ".jpg", ".jpeg", ".png" };
             var ext = Path.GetExtension(selectedImage.Name).ToLowerInvariant();
-
-            // Validate MIME type
             var validMimeTypes = new[] { "image/jpeg", "image/png" };
             if (!validExtensions.Contains(ext) || !validMimeTypes.Contains(selectedImage.ContentType.ToLowerInvariant()))
             {
-                // Display an error message (replace with your own error handling logic)
                 Console.WriteLine("Invalid file type. Only .jpg and .png files are allowed.");
                 selectedImage = null;
                 return;
@@ -125,13 +134,9 @@ namespace AdminPortalElixirHand.Pages
             var imageName = await SaveImageAsync(selectedImage);
             ProductUpdateDto.PictureUrl = $"{imagePath}/{imageName}";
 
-            StateHasChanged(); // This will trigger a re-render to update the image on the UI
+            StateHasChanged();
         }
 
-
-
-        public string FullImageUrl => $"http://localhost:5000/Content/{ProductUpdateDto.PictureUrl}";
+        public string FullImageUrl => $"{AppSettings.Value.BaseUrl}Content/{ProductUpdateDto.PictureUrl}";
     }
 }
-
-

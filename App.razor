@@ -1,4 +1,18 @@
-﻿<CascadingAuthenticationState>
+﻿@inject AdminPortalElixirHand.Services.TokenProvider TokenProvider
+
+@code {
+    [Parameter]
+    public AdminPortalElixirHand.Services.InitialApplicationState InitialState { get; set; }
+
+    protected override Task OnInitializedAsync()
+    {
+        TokenProvider.XsrfToken = InitialState.XsrfToken;
+       
+        return base.OnInitializedAsync();
+    }
+}
+
+<CascadingAuthenticationState>
     <Router AppAssembly="@typeof(Program).Assembly">
         <Found Context="routeData">
             <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />

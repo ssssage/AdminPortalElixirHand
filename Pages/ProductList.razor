@@ -1,4 +1,5 @@
 ﻿@page "/product-list/"
+@using System.Globalization
 @inherits ProductListBase
 
 
@@ -38,7 +39,8 @@
                                 </div>
                                 <div class="card-body">
                                     <h5 class="card-title">@product.Name</h5>
-                                    <p class="card-text">@product.Price.ToString("C")</p>
+                                    <p class="card-text">@product.Price.ToString("C", CultureInfo.GetCultureInfo("en-GB"))</p>
+
                                     <div class="btn-group">
                                         <a href="#" class="btn btn-primary btn-sm">View</a>
                                         <a href="/edit-product/@product.Id" class="btn btn-secondary btn-sm">Edit</a>

@@ -1,5 +1,6 @@
 ﻿using AdminPortalElixirHand.Services;
 using API.Helpers;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace AdminPortalElixirHand
 {
@@ -23,14 +24,39 @@ namespace AdminPortalElixirHand
             services.AddRazorPages();
             services.AddServerSideBlazor();
 
+            // Register the configuration section
+            services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
+
             services.AddHttpClient<IProductService, ProductService>(client =>
             {
-                client.BaseAddress = new Uri("http://localhost:5000/");
+                client.BaseAddress = new Uri(Configuration["AppSettings:BaseUrl"]);
             });
 
+            services.AddHttpClient<IUserAccountService, UserAccountService>(client =>
+                {
+                    client.BaseAddress = new Uri(Configuration["AppSettings:BaseUrl"]);
+                });
 
+
+//services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+//    .AddCookie(options =>
+//    {
+//        options.Cookie.Name = "Secure_Cookie";
+//        options.LoginPath = "/login";
+//        options.Cookie.MaxAge = TimeSpan.FromMinutes(30);
+//        options.AccessDeniedPath = "/access-denied";
+//    });
+
+                services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                    .AddCookie();
+
+            services.AddScoped<TokenProvider>();
+            //services.AddScoped<TokenManager>();
 
         }
+
+
+
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
