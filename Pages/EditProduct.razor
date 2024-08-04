@@ -1,4 +1,5 @@
 ﻿@page "/edit-product/{Id:int}"
+@attribute [Authorize]
 @inherits EditProductBase
 
 @if (IsLoading)

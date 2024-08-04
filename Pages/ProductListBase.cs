@@ -2,6 +2,7 @@
 using API.Dtos;
 using API.Helpers;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Authorization;
 
 namespace AdminPortalElixirHand.Pages
 {
@@ -20,6 +21,9 @@ namespace AdminPortalElixirHand.Pages
 
         public bool IsLoading { get; set; } = true;
 
+        [CascadingParameter]
+        Task<AuthenticationState> AuthenticationState { get; set; }
+
         protected override async Task OnInitializedAsync()
         {
             // Initially load all products
@@ -28,24 +32,29 @@ namespace AdminPortalElixirHand.Pages
 
         private async Task LoadProducts()
         {
+            var authenticationState = await AuthenticationState;
+
             try
             {
-                IsLoading = true;
-                Pagination<ProductToReturnDto> pagination;
+                if (authenticationState.User.Identity.Name == "MrTiger")
+                {
+                    IsLoading = true;
+                    Pagination<ProductToReturnDto> pagination;
 
-                if (string.IsNullOrWhiteSpace(SearchTerm))
-                {
-                    pagination = await ProductService.GetProductsAsync(CurrentPage, PageSize);
-                }
-                else
-                {
-                    pagination = await ProductService.SearchProductsAsync(CurrentPage, PageSize, SearchTerm);
-                }
+                    if (string.IsNullOrWhiteSpace(SearchTerm))
+                    {
+                        pagination = await ProductService.GetProductsAsync(CurrentPage, PageSize);
+                    }
+                    else
+                    {
+                        pagination = await ProductService.SearchProductsAsync(CurrentPage, PageSize, SearchTerm);
+                    }
 
-                if (pagination != null)
-                {
-                    Products = pagination.Data.ToList();
-                    TotalPages = (int)Math.Ceiling(pagination.Count / (double)PageSize);
+                    if (pagination != null)
+                    {
+                        Products = pagination.Data.ToList();
+                        TotalPages = (int)Math.Ceiling(pagination.Count / (double)PageSize);
+                    }
                 }
             }
             catch (Exception ex)
@@ -56,6 +65,7 @@ namespace AdminPortalElixirHand.Pages
             {
                 IsLoading = false;
             }
+            
         }
 
 

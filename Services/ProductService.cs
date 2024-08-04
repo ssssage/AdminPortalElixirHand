@@ -11,17 +11,20 @@ namespace AdminPortalElixirHand.Services
     public class ProductService : IProductService
     {
         private readonly HttpClient _httpClient;
+        private readonly TokenProvider _tokenProvider;
 
         public IMapper Mapper { get; set; }
 
-        public ProductService(HttpClient httpClient)
+        public ProductService(HttpClient httpClient, TokenProvider tokenProvider)
         {
             _httpClient = httpClient;
+            _tokenProvider = tokenProvider;
         }
 
 
         public async Task<Pagination<ProductToReturnDto>> GetProductsAsync(int pageIndex, int pageSize)
         {
+            _httpClient.DefaultRequestHeaders.Add("Cookie", ".AspNetCore.Cookies=" + _tokenProvider); 
             var response = await _httpClient.GetFromJsonAsync<Pagination<ProductToReturnDto>>($"/api/products?PageIndex={pageIndex}&PageSize={pageSize}") ?? throw new Exception("Response from API is null");
             return response;
         }

@@ -3,7 +3,7 @@
 ﻿
 @inject AdminPortalElixirHand.Services.TokenProvider TokenProvider
 
-<div class="bg-light" id="sidebar-wrapper">
+<div class="bg-dark" id="sidebar-wrapper">
 <div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="">AdminPortalElixirHand</a>
@@ -18,60 +18,38 @@
          <AuthorizeView>
            <Authorized>
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+            <NavLink class="nav-link" href="/" Match="NavLinkMatch.All">
                 <span class="oi oi-home" aria-hidden="true"></span> Home
             </NavLink>
         </div>
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="product-list">
+            <NavLink class="nav-link" href="/product-list">
                 <span class="oi oi-list-rich" aria-hidden="true"></span> Products
             </NavLink>
         </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="product-overview">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Overview
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="add-new-product">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Add New Product
-            </NavLink>
-        </div>
-        
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="logout">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Logout Cookie
-            </NavLink>
-        </div>
-
-        </Authorized>
-        
-        <NotAuthorized>
-         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="login">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Login Cookie
-            </NavLink>
-        </div>
-
-                   
-                </NotAuthorized>
-         
-        </AuthorizeView>
-            <div class="nav-item px-3">
-                <NavLink class="nav-link" href="dologin">
-                    <span class="oi oi-list-rich" aria-hidden="true"></span>
-                    @(UserAccountService.IsLoggedIn ? "Logout" : "Login")
-                </NavLink>
-            </div>
-            <div class="nav-item px-3">
-                <form action="/logout" method="post">
+                
+       <div class="nav-item px-3">
+                        <form action="/Logout" method="post">
                     <button class="nav-link btn btn-link" type="submit">
-                        <span class="oi oi-list-rich" aria-hidden="true"></span> Log out 
+                                <span class="oi oi-list-rich" aria-hidden="true"></span> Logout (@context.User.Identity.Name)
                     </button>
                     <input name="__RequestVerificationToken" type="hidden"
                            value="@TokenProvider.XsrfToken">
                 </form>
             </div>
+
+        </Authorized>
+        
+        <NotAuthorized>
+         <div class="nav-item px-3">
+            <NavLink class="nav-link" href="/login">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> Login Cookie
+            </NavLink>
+        </div> 
+        </NotAuthorized>
+         
+        </AuthorizeView>
+           
    </nav>
        
 </div>

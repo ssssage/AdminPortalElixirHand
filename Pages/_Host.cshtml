@@ -10,13 +10,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+    <title>AdminPortalElixirHand</title>
+    <base href="~/" />
 </head>
 <body>
     @{
         var initialTokenState = new AdminPortalElixirHand.Services.InitialApplicationState
             {
                 XsrfToken = Xsrf.GetAndStoreTokens(HttpContext).RequestToken,
+                Cookie = HttpContext.Request.Cookies[".AspNetCore.Cookies"]
             };
     }
 
