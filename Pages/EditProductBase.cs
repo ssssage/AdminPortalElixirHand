@@ -33,6 +33,7 @@ namespace AdminPortalElixirHand.Pages
         public bool IsLoading { get; set; } = true;
         private IBrowserFile? selectedImage;
         private string imagePath = "images/products";
+        protected string ImageUrl { get; set; }
 
         protected override async Task OnInitializedAsync()
         {
@@ -118,6 +119,26 @@ namespace AdminPortalElixirHand.Pages
             return imageName;
         }
 
+        //protected async void HandleImageUpload(InputFileChangeEventArgs e)
+        //{
+        //    selectedImage = e.File;
+
+        //    var validExtensions = new[] { ".jpg", ".jpeg", ".png" };
+        //    var ext = Path.GetExtension(selectedImage.Name).ToLowerInvariant();
+        //    var validMimeTypes = new[] { "image/jpeg", "image/png" };
+        //    if (!validExtensions.Contains(ext) || !validMimeTypes.Contains(selectedImage.ContentType.ToLowerInvariant()))
+        //    {
+        //        Console.WriteLine("Invalid file type. Only .jpg and .png files are allowed.");
+        //        selectedImage = null;
+        //        return;
+        //    }
+
+        //    var imageName = await ProductService.UploadImageAsync(selectedImage);
+        //    ProductUpdateDto.PictureUrl = $"{imagePath}/{imageName}";
+
+        //    StateHasChanged();
+        //}
+
         protected async void HandleImageUpload(InputFileChangeEventArgs e)
         {
             selectedImage = e.File;
@@ -132,11 +153,12 @@ namespace AdminPortalElixirHand.Pages
                 return;
             }
 
-            var imageName = await SaveImageAsync(selectedImage);
-            ProductUpdateDto.PictureUrl = $"{imagePath}/{imageName}";
+            var imageUrl = await ProductService.UploadImageAsync(selectedImage);
+            ProductUpdateDto.PictureUrl = imageUrl;
 
             StateHasChanged();
         }
+
 
         public string FullImageUrl => $"{AppSettings.Value.BaseUrl}Content/{ProductUpdateDto.PictureUrl}";
     }

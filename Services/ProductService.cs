@@ -24,7 +24,7 @@ namespace AdminPortalElixirHand.Services
 
         public async Task<Pagination<ProductToReturnDto>> GetProductsAsync(int pageIndex, int pageSize)
         {
-            _httpClient.DefaultRequestHeaders.Add("Cookie", ".AspNetCore.Cookies=" + _tokenProvider); 
+            _httpClient.DefaultRequestHeaders.Add("Cookie", ".AspNetCore.Cookies=" + _tokenProvider);
             var response = await _httpClient.GetFromJsonAsync<Pagination<ProductToReturnDto>>($"/api/products?PageIndex={pageIndex}&PageSize={pageSize}") ?? throw new Exception("Response from API is null");
             return response;
         }
@@ -81,8 +81,8 @@ namespace AdminPortalElixirHand.Services
 
             var responseContent = await response.Content.ReadAsStringAsync();
             var json = JsonDocument.Parse(responseContent);
-            return json.RootElement.GetProperty("ImageUrl").GetString();
+            return json.RootElement.GetProperty("pictureUrl").GetString();
         }
-
+           
     }
 }

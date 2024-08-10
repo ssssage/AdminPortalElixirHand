@@ -4,8 +4,8 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 -->
 <Project>
   <PropertyGroup>
-    <History>True|2024-07-29T20:14:09.9030192Z||;True|2024-07-29T21:12:40.9589959+01:00||;True|2024-07-29T20:05:24.9889390+01:00||;False|2024-07-29T20:04:13.9546155+01:00||;True|2024-07-29T18:15:16.6342804+01:00||;False|2024-07-29T18:14:23.0433145+01:00||;False|2024-07-29T18:09:20.0368440+01:00||;False|2024-07-29T18:07:35.1572016+01:00||;</History>
+    <_PublishTargetUrl>C:\Users\elixi\Desktop\Code\Admin\Publish</_PublishTargetUrl>
+    <History>True|2024-08-08T05:47:26.0853516Z||;</History>
     <LastFailureDetails />
-    <_PublishTargetUrl>C:\Users\elixi\Desktop\Code\Admin\publish</_PublishTargetUrl>
   </PropertyGroup>
 </Project>
