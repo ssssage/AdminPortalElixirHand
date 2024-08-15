@@ -81,8 +81,8 @@ namespace AdminPortalElixirHand.Services
 
             var responseContent = await response.Content.ReadAsStringAsync();
             var json = JsonDocument.Parse(responseContent);
-            return json.RootElement.GetProperty("ImageUrl").GetString();
+            // Use "pictureUrl" instead of "PictureUrl" to match the camelCase convention
+            return json.RootElement.GetProperty("pictureUrl").GetString();
         }
-
     }
 }

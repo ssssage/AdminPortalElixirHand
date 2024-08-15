@@ -36,8 +36,8 @@ namespace AdminPortalElixirHand.Pages
 
             try
             {
-                if (authenticationState.User.Identity.Name == "MrTiger")
-                {
+                //if (authenticationState.User.Identity.Name == "MrTiger")
+                //{
                     IsLoading = true;
                     Pagination<ProductToReturnDto> pagination;
 
@@ -55,7 +55,7 @@ namespace AdminPortalElixirHand.Pages
                         Products = pagination.Data.ToList();
                         TotalPages = (int)Math.Ceiling(pagination.Count / (double)PageSize);
                     }
-                }
+                //}
             }
             catch (Exception ex)
             {

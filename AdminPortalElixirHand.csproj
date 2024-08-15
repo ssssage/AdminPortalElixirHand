@@ -50,8 +50,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Components\" />
     <Folder Include="Data\" />
-    <Folder Include="Pages\Components\" />
   </ItemGroup>
 
   <ItemGroup>

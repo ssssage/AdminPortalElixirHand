@@ -132,11 +132,12 @@ namespace AdminPortalElixirHand.Pages
                 return;
             }
 
-            var imageName = await SaveImageAsync(selectedImage);
+            var imageName = await ProductService.UploadImageAsync(selectedImage);
             ProductUpdateDto.PictureUrl = $"{imagePath}/{imageName}";
 
             StateHasChanged();
         }
+
 
         public string FullImageUrl => $"{AppSettings.Value.BaseUrl}Content/{ProductUpdateDto.PictureUrl}";
     }
