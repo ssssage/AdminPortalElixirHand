@@ -20,7 +20,7 @@ namespace AdminPortalElixirHand
             services.AddAutoMapper(typeof(MappingProfiles));
             services.AddRazorPages();
             services.AddServerSideBlazor();
-
+           
             // Register the configuration section
             services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
 
