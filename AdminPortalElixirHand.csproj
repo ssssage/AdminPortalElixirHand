@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -9,13 +9,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Data\**" />
     <Compile Remove="Pages\Product\**" />
-    <Content Remove="Data\**" />
     <Content Remove="Pages\Product\**" />
-    <EmbeddedResource Remove="Data\**" />
     <EmbeddedResource Remove="Pages\Product\**" />
-    <None Remove="Data\**" />
     <None Remove="Pages\Product\**" />
   </ItemGroup>
 
@@ -27,12 +23,14 @@
 
   <ItemGroup>
     <Content Remove="Pages\AddNewProduct.razor" />
-    <Content Remove="Pages\Components\UploadImage.razor" />
   </ItemGroup>
 
 
   <ItemGroup>
     <Content Update="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="not_appsettings.Development.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
@@ -52,21 +50,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Components\" />
+    <Folder Include="Data\" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\API\API.csproj" />
     <ProjectReference Include="..\Core\Core.csproj" />
     <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Pages\Components\UploadImage.razor" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <_ContentIncludedByDefault Remove="Pages\Components\UploadImage.razor" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Pages\Components\" />
   </ItemGroup>
 
 </Project>
