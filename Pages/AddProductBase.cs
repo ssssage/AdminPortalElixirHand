@@ -1,15 +1,13 @@
 ﻿using AdminPortalElixirHand.Services;
 using API.Dtos;
-using AutoMapper;
 using Core.Entities;
 using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.Extensions.Options;
 
 namespace AdminPortalElixirHand.Pages
 {
-    public class EditProductBase : ComponentBase
+    public class AddProductBase : ComponentBase
     {
         [Inject]
         public IProductService ProductService { get; set; }
@@ -17,15 +15,9 @@ namespace AdminPortalElixirHand.Pages
         [Inject]
         public IOptions<AppSettings> AppSettings { get; set; }
 
-        public ProductUpdateDto ProductUpdateDto { get; set; } = new ProductUpdateDto();
+        public ProductCreateDto ProductCreateDto { get; set; } = new ProductCreateDto();
         public List<ProductType> ProductTypes { get; set; } = new List<ProductType>();
         public List<ProductBrand> ProductBrands { get; set; } = new List<ProductBrand>();
-
-        [Parameter]
-        public int Id { get; set; }
-
-        [Inject]
-        public IMapper Mapper { get; set; }
 
         [Inject]
         public NavigationManager Navigation { get; set; }
@@ -36,28 +28,9 @@ namespace AdminPortalElixirHand.Pages
 
         protected override async Task OnInitializedAsync()
         {
-            var product = await ProductService.GetProductByIdAsync(Id);
-            Mapper.Map(product, ProductUpdateDto);
-
             ProductTypes = (await ProductService.GetProductTypesAsync()).ToList();
             ProductBrands = (await ProductService.GetProductBrandsAsync()).ToList();
             IsLoading = false;
-        }
-
-        private string GetShortenedPictureUrl(string fullUrl)
-        {
-            return fullUrl.Replace(AppSettings.Value.BaseUrl, string.Empty);
-        }
-
-        public string ShortenedPictureUrl
-        {
-            get => ProductUpdateDto.PictureUrl.Replace("Content/", string.Empty);
-            set => ProductUpdateDto.PictureUrl = value;
-        }
-
-        protected void HandleImageUrlChange(ChangeEventArgs e)
-        {
-            ShortenedPictureUrl = e.Value.ToString();
         }
 
         protected async Task HandleValidSubmit()
@@ -65,27 +38,18 @@ namespace AdminPortalElixirHand.Pages
             if (selectedImage != null)
             {
                 var imageName = await SaveImageAsync(selectedImage);
-                ProductUpdateDto.PictureUrl = $"{imagePath}/{imageName}";
-            }
-            else
-            {
-                ProductUpdateDto.PictureUrl = ShortenedPictureUrl;
+                ProductCreateDto.PictureUrl = $"{imagePath}/{imageName}";
             }
 
-            var success = await ProductService.UpdateProductAsync(ProductUpdateDto);
+            var success = await ProductService.CreateProductAsync(ProductCreateDto);
             if (success)
             {
                 Navigation.NavigateTo("/product-list");
             }
             else
             {
-                // Handle error (show error message)
+                // Handle error (e.g., show error message)
             }
-        }
-
-        protected void Cancel()
-        {
-            Navigation.NavigateTo("/product-list");
         }
 
         private async Task<string> SaveImageAsync(IBrowserFile file)
@@ -133,12 +97,16 @@ namespace AdminPortalElixirHand.Pages
             }
 
             var imageName = await ProductService.UploadImageAsync(selectedImage);
-            ProductUpdateDto.PictureUrl = $"{imagePath}/{imageName}";
+            ProductCreateDto.PictureUrl = $"{imagePath}/{imageName}";
 
             StateHasChanged();
         }
 
+        protected void Cancel()
+        {
+            Navigation.NavigateTo("/product-list");
+        }
 
-        public string FullImageUrl => $"{AppSettings.Value.BaseUrl}Content/{ProductUpdateDto.PictureUrl}";
+        public string FullImageUrl => $"{AppSettings.Value.BaseUrl}Content/{ProductCreateDto.PictureUrl}";
     }
 }
